@@ -36,6 +36,9 @@ document.querySelectorAll('[data-service]').forEach(button => button.addEventLis
   openDialog(serviceDialog);
 }));
 const interest = document.querySelector('#interest');
+document.querySelectorAll('[data-contact-topic]').forEach(link => link.addEventListener('click', () => {
+  interest.value = link.dataset.contactTopic;
+}));
 document.querySelector('#dialog-contact').addEventListener('click', () => {
   const mapping = { support: 'Support', drift: 'IT-avtale', sky: 'Sky', nettverk: 'Annet', utstyr: 'Utstyr', kontor: 'Utstyr' };
   interest.value = mapping[activeService]; serviceDialog.close();
